@@ -51,6 +51,8 @@
           class="cursor-pointer"
           @click="deleteProduct(data.item.id)"
         />
+
+        <b-form-checkbox @change="deleteProductsById" v-model="idsProductsSelected"/>
       </template>
     </b-table>
     <modal-new-product v-if="openModalNewProduct" @hidden="reloadTable" :isUpdate="updateProduct" :idProductUpdate="idProductUpdate"/>
@@ -71,6 +73,7 @@ export default {
       openModalNewProduct: false,
       updateProduct: false,
       idProductUpdate: null,
+      idsProductsSelected:[],
       fields: [
         {
           key: "code",
@@ -162,6 +165,10 @@ export default {
         throw error;
       }
     },
+    async deleteProductsById(id){
+      this.idProductUpdate.
+      console.log(this.idsProductsSelected)
+    }
   },
 };
 </script>
